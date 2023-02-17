@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "linkFont": "npx reac-native-asset"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -17,7 +18,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "react": "18.2.0",
-    "react-native": "0.71.2"
+    "react-native": "0.71.2",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -28,6 +30,8 @@
     "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/styled-components": "^5.1.26",
+    "@types/styled-components-react-native": "^5.2.1",
     "babel-jest": "^29.2.1",
     "eslint": "^8.0.1",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -36,6 +40,9 @@
     "prettier": "^2.4.1",
     "react-test-renderer": "18.2.0",
     "typescript": "*"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   },
   "jest": {
     "preset": "react-native"
