@@ -1,3 +1,14 @@
 {
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "rootDir": ["src"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false
+  },
   "extends": "@tsconfig/react-native/tsconfig.json"
 }

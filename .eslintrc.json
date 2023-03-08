@@ -20,10 +20,12 @@
     "plugins": [
         "react",
         "typescript-eslint",
-        "react-hooks",
+        "react-hooks"
     ],
     "rules": {
-        "prettier/prattier": "error",
+        "prettier/prattier": ["error",{
+            "endOfLine": "auto"}
+        ],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhausted-deps": "warn",
         "react/jsx-filename-extension" : [1, {"extensions": [".tsx"] }],

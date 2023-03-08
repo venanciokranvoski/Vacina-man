@@ -1,12 +1,11 @@
-import { TouchableOpacityProps } from "react-native";
-import { ColorsType} from 'styled-components';
+import {TouchableOpacityProps} from 'react-native';
+import {ColorsType} from 'styled-components';
 
 export type Mode = 'outlined' | 'contained';
 
-
 export interface ButtonProps extends TouchableOpacityProps {
-    children: string;
-    color?: ColorsType;
-    mode?: Mode;
-    loading?: boolean;
+  children: string;
+  color?: ColorsType;
+  mode?: Mode;
+  loading?: boolean;
 }

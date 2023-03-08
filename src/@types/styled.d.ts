@@ -1,17 +1,33 @@
 import 'styled-components';
-
 declare module 'style-components' {
-    export  interface ColorType {
-        main: string
-        onMain: string
+    export interface Spacing {
+        ty: number;
+        xs: number;
+        sm: number;
+        md: number;
+        lg: number;
+        xl: number;
+        xxl: number;
+        xxxl: number;
+    }
+
+    export interface border {
+        radius: {
+            sm: number;
+        };
+    }
+
+    export interface ColorType {
+        main: string;
+        onMain: string;
     }
 
     export type ColorsType =
-                               'primary'
-                             | 'secondary'
-                             | 'background'
-                             | 'error'
-                             | 'surface';
+        | 'primary'
+        | 'secondary'
+        | 'background'
+        | 'error'
+        | 'surface';
 
     export interface PaletteType {
         primary: ColorType;
@@ -26,7 +42,7 @@ declare module 'style-components' {
      */
 
     export interface TypographyProps {
-        fontFamily: string      ;
+        fontFamily: string;
         fontSize: number;
     }
 
@@ -47,25 +63,24 @@ declare module 'style-components' {
     }
 
     export type Typography =
-        |'h1'
-        |'h2'
-        |'h3'
-        |'h4'
-        |'h5'
-        |'h6'
-        |'subtitle1'
-        |'subtitle2'
-        |'body1'
-        |'body2'
-        |'body3'
-        |'caption'
-        |'overline';
-
-
-
+        | 'h1'
+        | 'h2'
+        | 'h3'
+        | 'h4'
+        | 'h5'
+        | 'h6'
+        | 'subtitle1'
+        | 'subtitle2'
+        | 'body1'
+        | 'body2'
+        | 'body3'
+        | 'caption'
+        | 'overline';
 
     export interface DefaultTheme {
-        colors : PaletteType;
-        typography : Typography;
+        colors: PaletteType;
+        typography: Typography;
+        spacing: Spacing;
+        borders: border;
     }
 }

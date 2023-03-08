@@ -1,7 +1,7 @@
-import { Typography } from 'styled-components';
-import { Fonts } from '../fonts';
+import {Typography, Spacing, Border} from 'styled-components';
+import {Fonts} from '../fonts';
 
-export const typographyCommon : Typography = {
+export const typographyCommon: Typography = {
     h1: {
         fontSize: 96,
         fontFamily: Fonts.openSansLight,
@@ -54,4 +54,22 @@ export const typographyCommon : Typography = {
         fontSize: 14,
         fontFamily: Fonts.openSansLight,
     },
-}
+};
+
+export const spacing: Spacing = {
+    ty: 4,
+    xs: 5,
+    sm: 10,
+    md: 20,
+    lg: 25,
+    xl: 32,
+    xxl: 40,
+    xxxl: 42,
+};
+
+export const borders: Border = {
+    radius: {
+        sm: 3,
+        xs: 5,
+    },
+};
