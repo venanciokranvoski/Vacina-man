@@ -1,6 +1,6 @@
 {
     "env": {
-        "es2021": true
+        "es2023": true
     },
     "global": {
     "__DEV__":"readonly"
@@ -14,34 +14,24 @@
     "overrides": [
     ],
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "typescript-eslint",
-        "react-hooks"
-    ],
+    "plugins": ["react", "prettier"],
     "rules": {
-        "prettier/prattier": ["error",{
-            "endOfLine": "auto"}
-        ],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhausted-deps": "warn",
-        "react/jsx-filename-extension" : [1, {"extensions": [".tsx"] }],
+        "prettier/prettier": "error",
+        "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".js"] }],
         "import/prefer-default-export": "off",
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "ts": "never",
-                "tsx": "naver"
-            }
-        ]
-    },
+        "no-param-reassign": "off",
+        "no-console": ["error", { "allow": ["tron"] }]
+      },
     "settings": {
-        "import/resolver":{
-            "typescript":{}
+        "import/resolver": {
+          "typescript": {},
+          "babel-plugin-root-import": {
+            "rootPathPrefix": "~",
+            "rootPathSuffix": "src"
+          }
         }
-    }
+      }
 }

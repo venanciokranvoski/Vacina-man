@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["ES2017"],
+    "allowJs": true,
+    "jsx":"react-native",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     },
-    "rootDir": ["src"],
+    "rootDirs": ["src"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true
   },
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js","jest.config.js"]
 }
