@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.12",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
