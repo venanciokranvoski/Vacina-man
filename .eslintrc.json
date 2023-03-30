@@ -14,13 +14,13 @@
     "overrides": [
     ],
     "parserOptions": {
-        "ecmaVersion": 2018,
+        "ecmaVersion": 2022,
         "sourceType": "module"
     },
     "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": "error",
-        "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".js"] }],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".js", ".tsx", ".ts"] }],
         "import/prefer-default-export": "off",
         "no-param-reassign": "off",
         "no-console": ["error", { "allow": ["tron"] }]
