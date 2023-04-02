@@ -1,18 +1,18 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react/react-in-jsx-scope */
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {BottomTabParamList} from '~/@types/routes/BottomTabNavigator';
 import Icon from '~/components/Icon';
-import HomeStackNavigator from '../HomeStackNavigator';
-import ProfileHomeStackNavigator from '../ProfileStackNavigator';
+import Home from '~/screen/SignedIn/Home';
+import Profile from '~/screen/SignedIn/Profile';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-const BottomTabs = () => {
+const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
         name="home"
-        component={HomeStackNavigator}
+        component={Home}
         options={{
           header: () => null,
           tabBarIcon: () => <Icon icon="listening" />,
@@ -20,7 +20,7 @@ const BottomTabs = () => {
       />
       <BottomTab.Screen
         name="profile"
-        component={ProfileHomeStackNavigator}
+        component={Profile}
         options={{
           header: () => null,
           tabBarIcon: () => <Icon icon="reading" />,
@@ -30,4 +30,4 @@ const BottomTabs = () => {
   );
 };
 
-export default BottomTabs;
+export default BottomTabNavigator;
