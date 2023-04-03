@@ -18,10 +18,18 @@ const Icon = ({
         size={size}
         source={icons[icon]}
         style={[{tintColor: activeColor}, style]}
+        resizeMode="contain"
       />
     );
   }
-  return <Container size={size} source={icons[icon]} />;
+  return (
+    <Container
+      size={size}
+      source={icons[icon]}
+      style={style}
+      resizeMode="contain"
+    />
+  );
 };
 
 export default Icon;

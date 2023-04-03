@@ -2,6 +2,7 @@
 import React, {createContext, useState} from 'react';
 import {UserDTO} from '~/@types/dtos/user';
 import {AuthContextProp} from './types';
+import axios from 'axios';
 
 export const AuthContext = createContext<AuthContextProp>(
   {} as AuthContextProp,
@@ -10,15 +11,14 @@ export const AuthContext = createContext<AuthContextProp>(
 export const AuthProvider: React.FC = ({children}) => {
   const [user, setUser] = useState<UserDTO>();
   const [loading, setLoading] = useState(false);
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   /**
    * Callbacks
    */
 
   const signIn = async (data?: {email: string; password: string}) => {
-    setIsLogged(true);
-    await new Promise(resolve => setTimeout(() => resolve('ok'), 2000));
+    setIsLogged(false);
   };
 
   const signOut = () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
 import SignInNavigator from './SignInNavigator';
-// import {DevSettings} from 'react-native';
 import useAuth from '~/hooks/useAuth';
 
 // import { Container } from './styles';
@@ -14,7 +13,7 @@ const Routes: React.FC = () => {
   //   DevSettings.addMenuItem('Change Routes', () => setIsLogged(old => !old));
   // }, []);
 
-  return signIn ? <BottomTabNavigator /> : <SignInNavigator />;
+  return !signIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };
 
 export default Routes;

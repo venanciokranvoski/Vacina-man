@@ -11,12 +11,12 @@ export const typographyCommon: Typography = {
     fontFamily: Fonts.openSansLight,
   },
   h3: {
-    fontSize: 48,
-    fontFamily: Fonts.openSansRegular,
+    fontSize: 32,
+    fontFamily: Fonts.openSansBold,
   },
   h4: {
     fontSize: 32,
-    fontFamily: Fonts.montserratBold,
+    fontFamily: Fonts.montserratSemiBold,
   },
   h5: {
     fontSize: 24,
@@ -27,7 +27,7 @@ export const typographyCommon: Typography = {
     fontFamily: Fonts.montserratRegular,
   },
   subtitle1: {
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: Fonts.openSansRegular,
   },
   subtitle2: {
