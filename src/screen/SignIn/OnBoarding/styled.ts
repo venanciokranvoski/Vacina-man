@@ -9,8 +9,9 @@ export const Container = styled.SafeAreaView`
 `;
 export const Person = styled(Icon)`
   align-self: center;
+
 `;
 
 export const ContenText = styled.View`
-
+  align-self: center;
 `;

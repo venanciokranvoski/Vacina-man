@@ -63,7 +63,7 @@ export const spacing: Spacing = {
   md: 20,
   lg: 25,
   xl: 32,
-  xxl: 40,
+  xxl: 45,
   xxxl: 42,
 };
 
