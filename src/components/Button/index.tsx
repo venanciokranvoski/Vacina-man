@@ -1,11 +1,12 @@
 import React, {useContext, useMemo} from 'react';
 import {ButtonProps} from './types';
 
-import {Container, Title, Loading} from './styled';
+import {Container, Title, Loading, AbsoluteIcon} from './styled';
 import {ThemeContext} from 'styled-components';
 
 const Button = ({
   children,
+  icons,
   mode = 'contained',
   color = 'primary',
   loading,
@@ -25,6 +26,7 @@ const Button = ({
       color={colors[color].main}
       onPress={onPress}
       {...rest}>
+      {!!icons && <AbsoluteIcon>{icons}</AbsoluteIcon>}
       <Title color={colorsByMode}>{children}</Title>
       {loading && <Loading size={15} color={colorsByMode} />}
     </Container>

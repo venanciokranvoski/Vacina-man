@@ -11,3 +11,5 @@ export const brand04 = '#3700b3';
 export const brand05 = '#6200ee';
 
 export const neutrais = '#000000';
+export const greey500 = '#6B7785';
+export const greey600 = '#41474D';

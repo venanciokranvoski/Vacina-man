@@ -9,7 +9,6 @@ interface ContainerProps {
 
 export const Container = styled.TouchableOpacity<ContainerProps>`
   padding: 12px 0 12px 0;
-  margin: 20px;
   background-color: ${({color, mode}) => {
     if (mode === 'outlined') {
       return 'transparent';
@@ -37,4 +36,9 @@ export const Title = styled.Text<TitleProps>`
 
 export const Loading = styled.ActivityIndicator`
   margin-left: ${({theme}) => theme.spacing.sm}px;
+`;
+
+export const AbsoluteIcon = styled.View`
+  position: absolute;
+  left: ${({theme}) => theme.spacing.md}px;
 `;
