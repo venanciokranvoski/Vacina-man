@@ -23,6 +23,14 @@ export const themeLigth: DefaultTheme = {
       main: Colors.neutrais,
       onMain: Colors.white,
     },
+    surface50: {
+      main: Colors.greey50,
+      onMain: Colors.white,
+    },
+    surface100: {
+      main: Colors.greey100,
+      onMain: Colors.white,
+    },
   },
   typography: typographyCommon,
   borders,

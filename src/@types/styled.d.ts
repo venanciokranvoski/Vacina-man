@@ -29,6 +29,7 @@ declare module 'style-components' {
     | 'error'
     | 'surface'
     | 'surface500'
+    | 'surface100'
     | 'surface600';
 
   export interface PaletteType {
@@ -38,6 +39,7 @@ declare module 'style-components' {
     error: ColorType;
     surface: ColorType;
     surface500: ColorType;
+    surface100: ColorType;
     surface600: ColorType;
   }
 

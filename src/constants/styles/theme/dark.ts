@@ -23,6 +23,10 @@ export const themeDark: DefaultTheme = {
       main: Colors.neutrais,
       onMain: Colors.white,
     },
+    surface100: {
+      main: Colors.greey100,
+      onMain: Colors.white,
+    },
   },
   typography: typographyCommon,
   borders,
