@@ -8,6 +8,9 @@ import closeX from '../../assets/Icons/closeX.png';
 import checkCircle from '../../assets/Icons/checkCircle.png';
 import google from '../../assets/Icons/google.png';
 import apple from '../../assets/Icons/apple.png';
+import back from '../../assets/Icons/Back.png'
+import olhoOpen from '../../assets/Icons/olhoOpen.png'
+import olhoExit from '../../assets/Icons/olhoExit.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -19,7 +22,11 @@ export type NameIconTypes =
   | 'closeX'
   | 'checkCircle'
   | 'google'
-  | 'apple';
+  | 'apple'
+  | 'back'
+  | 'olhoOpen'
+  | 'olhoExit'
+  ;
 
 export default {
   reading,
@@ -32,4 +39,7 @@ export default {
   checkCircle,
   google,
   apple,
+  back,
+  olhoOpen,
+  olhoExit
 };

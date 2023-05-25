@@ -3,36 +3,31 @@ import React, { useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useTheme } from 'styled-components';
 import useSignInNavigation from '~/hooks/useSignInNavigation';
-import { shemaSignUp } from './validation';
+import { shemaSignUpStep2 } from './validation';
 import { StatusBar, useWindowDimensions } from 'react-native';
 import HeaderOption from '~/components/HeaderOption';
-import Icon from '~/components/Icon';
 import TextMain from '~/components/Text';
 import Separator from '~/components/Separator';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import  Bar  from 'react-native-progress/Bar';
-
-import { Container, PressebleX } from './styled';
+import { Container } from './styled';
 import BackButton from '~/components/BackButton';
-import { useRoute } from '@react-navigation/native';
 
-const SignUp: React.FC = () => {
+const SignUpStep2: React.FC = () => {
   const {spacing, colors} = useTheme();
   const navigation = useSignInNavigation();
   const {width} = useWindowDimensions()
 
-  
   /**
   * Forms
   */
  const { control, handleSubmit, setValue, formState: {errors}, } = 
   useForm({
-    resolver: yupResolver(shemaSignUp),
+    resolver: yupResolver(shemaSignUpStep2),
     defaultValues: {
-      email: '',
-      firstName: '',
-      lastName: ''
+      password: '',
+      confirm_password: '',
     }
   })
 
@@ -54,24 +49,19 @@ const SignUp: React.FC = () => {
   const handleGoBack = () => navigation.goBack();
 
   const onSubmit = async () => {
-   await handleSubmit(({email, firstName, lastName})=> {
-    console.log('aqui veio  ==> ' , email, firstName, lastName);
-    navigation.navigate("signupstep2", {
-      email,
-      firstName,
-      lastName,
-    })
+   await handleSubmit(({password, confirm_password})=> {
+    console.log({password, confirm_password});
    })(); 
   }
   return (
     <Container>
       <StatusBar barStyle="dark-content" />
       <HeaderOption
-        left={<BackButton icon='back'  onPress={handleGoBack} />}
+        left={<BackButton icon='back' onPress={handleGoBack} />}
         center={<Separator width={spacing.md} />}
         rigth={
           <Bar 
-            progress={0.5}
+            progress={1}
             color={colors.primary.main}
             unfilledColor={colors.surface100.main}
             borderWidth={0}
@@ -83,66 +73,51 @@ const SignUp: React.FC = () => {
       <Separator height={spacing.md} />
       <TextMain typography="h3">Cadastro</TextMain>
       <Separator height={spacing.md} />
-      <TextMain typography="caption">Informações pessoais</TextMain>
+      <TextMain typography="caption">{`Sua senha precisa ter pelo menos \n3 caracteres`}</TextMain>
       <Separator height={spacing.md} />
       
       <Controller 
         control={control}
-        name='firstName'
+        name='password'
         render={({field: {onBlur, onChange, value, ref}})=> (
           <Input 
-            label="Nome" 
+            label="Senha" 
             onBlur={onBlur}
             onChange={onChange}
             value={value}
             ref={ref}
-            error={errors.firstName?.message}
-            onChangeText={ text => setValue('firstName', text)}
+            error={errors.password?.message}
+            onChangeText={ text => setValue('password', text)}
             autoCapitalize="none"
+            secureTextEntry
+            autoCapitalaze="none" 
           />
         )}
       />
 
       <Controller 
         control={control}
-        name='lastName'
+        name='confirm_password'
         render={({field: {onBlur, onChange, value, ref}})=> (
           <Input 
-            label="Sobrenome"  
+            label="Confirme a Senha"  
             onBlur={onBlur}
             onChange={onChange}
             value={value}
             ref={ref}
-            error={errors.lastName?.message}
-            onChangeText={ text => setValue('lastName', text)}
+            error={errors.confirm_password?.message}
+            onChangeText={ text => setValue('confirm_password', text)}
             autoCapitalize="none"
+            secureTextEntry
+            autoCapitalaze="none"
           />
         )}
       />
-      
-      <Controller 
-        control={control}
-        name='email'
-        render={({field: {onBlur, onChange, value, ref}})=> (
-          <Input 
-            label="Email" 
-            onBlur={onBlur}
-            onChange={onChange}
-            value={value}
-            ref={ref}
-            error={errors.email?.message}
-            onChangeText={ text => setValue('email', text)}
-            autoCapitalize="none"
-          />
-        )}
-      />
-
-
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Continuar</Button>
+      <Button onPress={onSubmit}>Finalizar</Button>
       <Separator height={spacing.md} />
     </Container>
   );
 };
 
-export default SignUp;
+export default SignUpStep2;

@@ -83,7 +83,7 @@ const Input: React.ForwardRefRenderFunction<inputValueRef, inputProps> = (
         <TouchableOpacity onPress={() => setPasswordVisible(old => !old)}>
           <IconContainer iconPosition={iconPosition}>
             <Icon
-              icon={passwordVisible ? 'eyeOpen' : 'eyeClose'}
+              icon={passwordVisible ? 'olhoOpen' : 'olhoExit'}
               activeColor={selectColorForActiveColorIcon}
             />
           </IconContainer>

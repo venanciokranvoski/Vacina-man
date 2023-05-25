@@ -6,7 +6,7 @@ import { Props } from "./types";
 const BackButton = ({icon, onPress}: Props) => {
     return (
         <Container onPress={onPress}>
-            <Icon icon={icon} size={15} />
+            <Icon icon={icon} size={23} />
         </Container>
     )
 

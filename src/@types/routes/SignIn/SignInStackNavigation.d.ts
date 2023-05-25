@@ -8,6 +8,11 @@ declare global {
     login: undefined;
     onboarding: undefined;
     signup: undefined;
+    signupstep2: {
+      email: string;
+      firstName: string;
+      lastName:  string;
+    };
   };
 
   /**
@@ -26,7 +31,9 @@ declare global {
   export type StoriesSignInStackRouteProp = RouteProp<
   SignInStackParamList,
   'access'
->;
+  >;
+
+  export type SignUpStep2SignInStackRouteProp = RouteProp<SignInStackParamList, 'signupstep2'>
 
 }
 
