@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "670283818061",
+    "project_id": "gdua-3be83",
+    "storage_bucket": "gdua-3be83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670283818061:android:d99d31376fe98451852804",
+        "android_client_info": {
+          "package_name": "br.com.veve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670283818061-qg4aln1dtbkneaj3gcoo8obhhnv5i7mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.veve",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "670283818061-qibpvi242q4i91a3uurpll0vt744n9jg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2iG6NSMPb24lObvblZVlk5IdVOhqWzOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670283818061-qibpvi242q4i91a3uurpll0vt744n9jg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

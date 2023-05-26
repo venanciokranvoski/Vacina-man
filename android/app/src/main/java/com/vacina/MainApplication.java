@@ -1,4 +1,4 @@
-package com.vacina;
+package br.com.veve;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

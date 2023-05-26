@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Container, PressebleX} from './styled';
+import {Container} from './styled';
 import HeaderOption from '~/components/HeaderOption';
 import Icon from '~/components/Icon';
 import TextMain from '~/components/Text';
@@ -8,12 +8,14 @@ import Separator from '~/components/Separator';
 import {useTheme} from 'styled-components';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
-import {StatusBar} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 import useSignInNavigation from '~/hooks/useSignInNavigation';
 import { Controller, useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import { shemaLogin } from './validation';
 import BackButton from '~/components/BackButton';
+
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
@@ -42,6 +44,18 @@ const Login: React.FC = () => {
     console.log({email, password});
    })(); 
   }
+  
+
+  const handleGoogleSignIn = async ()=> {
+   try {
+     const {user} = await GoogleSignin.signIn();
+     console.log(user);
+    } catch (error) {
+     console.log(error);
+     
+   } 
+  }
+
 
   return (
     <Container>
@@ -107,11 +121,12 @@ const Login: React.FC = () => {
       <Separator height={spacing.md} />
       <TextMain typography="body3">ou acesse com login social</TextMain>
       <Separator height={spacing.md} />
+     { Platform.OS === 'ios' ?  
       <Button icons={<Icon icon="apple" />} color="secondary" mode="outlined">
         Continuar com a Apple
-      </Button>
+      </Button> : null}
       <Separator height={spacing.md} />
-      <Button icons={<Icon icon="google" />} color="secondary" mode="outlined">
+      <Button onPress={handleGoogleSignIn} icons={<Icon icon="google" />} color="secondary" mode="outlined">
         Continuar com o Google
       </Button>
     </Container>
