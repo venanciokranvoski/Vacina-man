@@ -16,10 +16,16 @@ import { shemaLogin } from './validation';
 import BackButton from '~/components/BackButton';
 
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import useAuth from '~/hooks/useAuth';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
   const navigation = useSignInNavigation();
+
+  /**
+   * useHooks
+   */
+  const {loading, signIn } = useAuth()
 
   /**
   * Forms
@@ -28,8 +34,8 @@ const Login: React.FC = () => {
   useForm({
     resolver: yupResolver(shemaLogin),
     defaultValues: {
-      email: '',
-      password: ''
+      email: __DEV__ ? 'venanciomissions@gmail.com' : '',
+      password: __DEV__ ?  '12345678' : ''
     }
   })
 
@@ -40,8 +46,10 @@ const Login: React.FC = () => {
   const handleGoBack = () => navigation.goBack();
 
   const onSubmit = async () => {
-   await handleSubmit(({email, password})=> {
-    console.log({email, password});
+   await handleSubmit(async({email, password})=> {
+    console.log(email, password);
+    
+    await signIn({email, password})
    })(); 
   }
   
@@ -117,7 +125,7 @@ const Login: React.FC = () => {
       />
 
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Login</Button>
+      <Button disabled={loading} loading={loading} onPress={onSubmit}>Login</Button>
       <Separator height={spacing.md} />
       <TextMain typography="body3">ou acesse com login social</TextMain>
       <Separator height={spacing.md} />

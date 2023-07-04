@@ -11,6 +11,8 @@ import apple from '../../assets/Icons/apple.png';
 import back from '../../assets/Icons/Back.png'
 import olhoOpen from '../../assets/Icons/olhoOpen.png'
 import olhoExit from '../../assets/Icons/olhoExit.png'
+import home from '../../assets/Icons/Home.png'
+import profile from '../../assets/Icons/profile.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -26,6 +28,8 @@ export type NameIconTypes =
   | 'back'
   | 'olhoOpen'
   | 'olhoExit'
+  | 'home'
+  | 'profile'
   ;
 
 export default {
@@ -41,5 +45,7 @@ export default {
   apple,
   back,
   olhoOpen,
-  olhoExit
+  olhoExit,
+  home,
+  profile
 };

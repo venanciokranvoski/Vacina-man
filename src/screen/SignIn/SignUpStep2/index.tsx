@@ -13,11 +13,23 @@ import Button from '~/components/Button';
 import  Bar  from 'react-native-progress/Bar';
 import { Container } from './styled';
 import BackButton from '~/components/BackButton';
+import useAuth from '~/hooks/useAuth';
+import { useRoute } from '@react-navigation/native';
 
 const SignUpStep2: React.FC = () => {
   const {spacing, colors} = useTheme();
   const navigation = useSignInNavigation();
+  const {
+    params: {email, firstName, lastName},
+  } = useRoute<SignUpStep2SignInStackRouteProp>();
   const {width} = useWindowDimensions()
+
+
+  /**
+   * Hooks
+  */
+  const {signUp, loading} = useAuth()
+
 
   /**
   * Forms
@@ -49,8 +61,8 @@ const SignUpStep2: React.FC = () => {
   const handleGoBack = () => navigation.goBack();
 
   const onSubmit = async () => {
-   await handleSubmit(({password, confirm_password})=> {
-    console.log({password, confirm_password});
+   await handleSubmit(async ({password, confirm_password})=> {
+     await signUp({email, firstName, lastName, password}) 
    })(); 
   }
   return (
@@ -114,7 +126,7 @@ const SignUpStep2: React.FC = () => {
         )}
       />
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Finalizar</Button>
+      <Button loading={loading} disabled={loading} onPress={onSubmit}>Finalizar</Button>
       <Separator height={spacing.md} />
     </Container>
   );

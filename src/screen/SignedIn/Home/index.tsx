@@ -1,10 +1,20 @@
 import React from 'react';
-import {View} from 'react-native';
+import Button from '~/components/Button';
+import useAuth from '~/hooks/useAuth';
 
-// import { Container } from './styles';
+import { Container } from './styled';
+import Header from './localComponents/Header';
+
+
 
 const Home: React.FC = () => {
-  return <View />;
+   const {signOut} = useAuth();
+  return ( 
+        <Container>
+          <Header />
+          <Button onPress={signOut}>Sair da Sessão</Button> 
+        </Container>
+  );
 };
 
 export default Home;

@@ -1,9 +1,7 @@
 /**
  * @format
  */
-
 // se estou em anbiente de desenvolvimento! 
-
 if (__DEV__) {
   require('./server.js');
 }

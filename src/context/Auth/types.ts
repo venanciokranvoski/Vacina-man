@@ -1,8 +1,9 @@
 import {UserDTO} from '~/@types/dtos/user';
+import { RequestCreateUserData } from '~/services/user/types';
 
 interface RequestSignData {
   email: string;
-  passowrd: string;
+  password: string;
 }
 
 export interface AuthContextProp {
@@ -10,6 +11,7 @@ export interface AuthContextProp {
   loading: boolean;
   user?: UserDTO;
   signIn: (data: RequestSignData) => Promise<void>;
+  signUp: (data: RequestCreateUserData) => Promise<void>
   signOut: () => void;
 }
 

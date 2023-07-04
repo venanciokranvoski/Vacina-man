@@ -1,3 +1,7 @@
 export interface UserDTO {
-  id?: string;
+  id: string;
+  firstName: string;
+  lastName: string;
+  token: string;
+  avatar?: string;
 }
