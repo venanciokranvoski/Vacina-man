@@ -13,6 +13,9 @@ import olhoOpen from '../../assets/Icons/olhoOpen.png'
 import olhoExit from '../../assets/Icons/olhoExit.png'
 import home from '../../assets/Icons/Home.png'
 import profile from '../../assets/Icons/profile.png'
+import localiza from '../../assets/Icons/Localização.png'
+import plus from '../../assets/Icons/Mais.png'
+import vacinaAgulha from '../../assets/Icons/Vacina.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -30,6 +33,9 @@ export type NameIconTypes =
   | 'olhoExit'
   | 'home'
   | 'profile'
+  | 'plus'
+  | 'localiza'
+  | 'vacinaAgulha'
   ;
 
 export default {
@@ -47,5 +53,8 @@ export default {
   olhoOpen,
   olhoExit,
   home,
-  profile
+  profile,
+  plus,
+  vacinaAgulha,
+  localiza
 };
