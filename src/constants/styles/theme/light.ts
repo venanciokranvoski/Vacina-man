@@ -31,6 +31,14 @@ export const themeLigth: DefaultTheme = {
       main: Colors.greey100,
       onMain: Colors.white,
     },
+    orange: {
+      main: Colors.orange,
+      onMain: Colors.white,
+    },
+    lightGreen:{
+      main: Colors.lightGreen,
+      onMain: Colors.white,
+    }
   },
   typography: typographyCommon,
   borders,

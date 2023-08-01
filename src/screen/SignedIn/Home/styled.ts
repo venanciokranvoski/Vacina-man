@@ -6,5 +6,11 @@ export const Container = styled.ScrollView`
 `;
 
 export const ScrollViewItems = styled.ScrollView`
-   padding: ${({theme})=> theme.spacing.md}px;
+   padding:   ${({theme})=> theme.spacing.md}px;
+   margin-top : 5px;
+`;
+
+export const Content = styled.View`
+  padding: 0 ${({theme})=> theme.spacing.md}px;
+
 `;

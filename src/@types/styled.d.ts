@@ -30,7 +30,12 @@ declare module 'style-components' {
     | 'surface'
     | 'surface500'
     | 'surface100'
-    | 'surface600';
+    | 'surface600'
+    | 'orange'
+    | 'lightGreen'
+    
+    
+    ;
 
   export interface PaletteType {
     primary: ColorType;
@@ -41,6 +46,8 @@ declare module 'style-components' {
     surface500: ColorType;
     surface100: ColorType;
     surface600: ColorType;
+    orange: ColorType;
+    lightGreen : ColorType 
   }
 
   /**

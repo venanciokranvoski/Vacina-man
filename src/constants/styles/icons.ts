@@ -16,6 +16,12 @@ import profile from '../../assets/Icons/profile.png'
 import localiza from '../../assets/Icons/Localização.png'
 import plus from '../../assets/Icons/Mais.png'
 import vacinaAgulha from '../../assets/Icons/Vacina.png'
+import calendario from '../../assets/Icons/Calendário.png'
+import logout from '../../assets/Icons/Logout.png'
+import notification from  '../../assets/Icons/Notification.png'
+import arrowRight from  '../../assets/Icons/arrow.png'
+import qrcode from '../../assets/Icons/qrcode.png'
+import lapis from '../../assets/Icons/lapis.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -36,6 +42,12 @@ export type NameIconTypes =
   | 'plus'
   | 'localiza'
   | 'vacinaAgulha'
+  | 'calendario'
+  | 'logout'
+  | 'notification'
+  | 'arrowRight'
+  | 'qrcode'
+  | 'lapis'
   ;
 
 export default {
@@ -56,5 +68,11 @@ export default {
   profile,
   plus,
   vacinaAgulha,
-  localiza
+  localiza,
+  calendario,
+  logout,
+  notification,
+  arrowRight,
+  qrcode,
+  lapis
 };

@@ -2,10 +2,10 @@ import React from 'react';
 
 import styles, { Circle, Container, Title } from './styles';
 import Icon from '~/components/Icon';
-import TextMain from '~/components/Text';
 import Separator from '~/components/Separator';
-import { View, Pressable } from 'react-native';
+import { Pressable } from 'react-native';
 import { Props } from './types';
+import VaccineCard from '~/components/VaccineCard';
 
 const SmallCard = ({icon, title, onPress}: Props) => {
   return (
@@ -18,8 +18,6 @@ const SmallCard = ({icon, title, onPress}: Props) => {
                 <Title>{title}</Title>
             </Container>
         </Pressable>
-
         )
 }
-
 export default SmallCard;
