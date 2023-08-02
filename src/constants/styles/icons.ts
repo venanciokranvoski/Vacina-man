@@ -22,6 +22,8 @@ import notification from  '../../assets/Icons/Notification.png'
 import arrowRight from  '../../assets/Icons/arrow.png'
 import qrcode from '../../assets/Icons/qrcode.png'
 import lapis from '../../assets/Icons/lapis.png'
+import marcado from '../../assets/Icons/marcado.png'
+import noMarcado from '../../assets/Icons/noMarcado.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -48,6 +50,8 @@ export type NameIconTypes =
   | 'arrowRight'
   | 'qrcode'
   | 'lapis'
+  | 'marcado'
+  | 'noMarcado'
   ;
 
 export default {
@@ -74,5 +78,7 @@ export default {
   notification,
   arrowRight,
   qrcode,
-  lapis
+  lapis,
+  marcado,
+  noMarcado
 };

@@ -6,16 +6,14 @@ import useSignInNavigation from '~/hooks/useSignInNavigation';
 import { shemaSignUp } from './validation';
 import { StatusBar, useWindowDimensions } from 'react-native';
 import HeaderOption from '~/components/HeaderOption';
-import Icon from '~/components/Icon';
 import TextMain from '~/components/Text';
 import Separator from '~/components/Separator';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import  Bar  from 'react-native-progress/Bar';
-
-import { Container, PressebleX } from './styled';
+import { Container } from './styled';
 import BackButton from '~/components/BackButton';
-import { useRoute } from '@react-navigation/native';
+import AvoidKeyboard from '~/components/AvoidKeyboard';
 
 const SignUp: React.FC = () => {
   const {spacing, colors} = useTheme();
@@ -64,6 +62,7 @@ const SignUp: React.FC = () => {
    })(); 
   }
   return (
+    <AvoidKeyboard>
     <Container>
       <StatusBar barStyle="dark-content" />
       <HeaderOption
@@ -142,6 +141,7 @@ const SignUp: React.FC = () => {
       <Button onPress={onSubmit}>Continuar</Button>
       <Separator height={spacing.md} />
     </Container>
+    </AvoidKeyboard>
   );
 };
 

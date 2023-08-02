@@ -10,7 +10,14 @@ import { useNavigation } from '@react-navigation/native';
 
 const AddVaccine: React.FC = () => {
     const { spacing } = useTheme();
-    const { goBack } = useNavigation()
+    const { goBack, navigate } = useNavigation()
+
+   const handleGotoQrCode =  () =>  navigate('qrCode');
+   // ===============================================
+   const handleGotoAddVaccineManually =  () =>  navigate('addVaccineManually');
+    
+  
+
   return  (
     <Container>
         <StatusBar barStyle={'dark-content'} />
@@ -23,7 +30,7 @@ const AddVaccine: React.FC = () => {
         <Separator height={spacing.sm} />
         <TextMain typography="caption">Gostaria de adicionar por meio de qual método?  </TextMain>
         <Separator height={spacing.lg} />
-        <View>
+        <Pressable onPress={handleGotoAddVaccineManually}>
            <Card>
              <RowCard>
                 <Icon icon='lapis' size={22} />
@@ -32,18 +39,18 @@ const AddVaccine: React.FC = () => {
              </RowCard>
              <Icon icon='arrowRight' size={12}/>
            </Card>
-        </View>
+        </Pressable>
         <Separator height={spacing.lg} />
-        <View>
+        <Pressable onPress={handleGotoQrCode}>
            <Card>
              <RowCard>
-                <Icon icon='qrcode' size={22} />
+                <Icon icon='qrcode' size={22}  />
                 <Separator width={spacing.md} />
                 <TextMain typography="caption">Leitura de Qr Code</TextMain>
              </RowCard>
              <Icon icon='arrowRight' size={12}/>
            </Card>
-        </View>
+        </Pressable>
         <Separator height={spacing.lg} />
     </Container>
   )

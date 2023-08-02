@@ -67,7 +67,7 @@ const Login: React.FC = () => {
 
   return (
     <Container>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="dark-content"  translucent backgroundColor={'transparent'}/>
       <HeaderOption
         left={
           <BackButton icon='closeX' onPress={handleGoBack} />

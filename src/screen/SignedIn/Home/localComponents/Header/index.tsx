@@ -13,7 +13,7 @@ const Header : React.FC = () => {
     const {spacing, colors} = useTheme()
     return (
         <Container source={headerImage}>
-            <StatusBar barStyle={'light-content'} backgroundColor={colors.main} />
+            <StatusBar barStyle={'light-content'} backgroundColor={'transparent'} translucent />
                 <Row>
                     <Area>
                         <Text color="background" typography="h5">Bem-vindx</Text>

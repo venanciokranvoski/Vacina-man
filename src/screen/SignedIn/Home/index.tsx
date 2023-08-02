@@ -23,9 +23,9 @@ const Home: React.FC = () => {
         <Container>
           <Header />
           <ScrollViewItems horizontal>
-            <SmallCard icon='vacinaAgulha' title={'Minhas\nVacinas'} onPress={handleAddVaccine} />
+            <SmallCard icon='vacinaAgulha' title={'Minhas\nVacinas'}  />
             <Separator width={15} />
-            <SmallCard icon='plus' title={'Adicionar\nCacinas'} />
+            <SmallCard icon='plus' title={'Adicionar\nVacinas'}  onPress={handleAddVaccine} />
             <Separator width={15} />
             <SmallCard icon='localiza' title={'Procurar local\n de Vacinas'} />
           </ScrollViewItems>
