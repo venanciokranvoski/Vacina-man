@@ -24,6 +24,8 @@ import qrcode from '../../assets/Icons/qrcode.png'
 import lapis from '../../assets/Icons/lapis.png'
 import marcado from '../../assets/Icons/marcado.png'
 import noMarcado from '../../assets/Icons/noMarcado.png'
+import search from '../../assets/Icons/Seach.png'
+import mark from '../../assets/Icons/mark.png'
 
 export type NameIconTypes =
   | 'reading'
@@ -52,6 +54,8 @@ export type NameIconTypes =
   | 'lapis'
   | 'marcado'
   | 'noMarcado'
+  | 'search'
+  | 'mark'
   ;
 
 export default {
@@ -80,5 +84,7 @@ export default {
   qrcode,
   lapis,
   marcado,
-  noMarcado
+  noMarcado,
+  search,
+  mark
 };

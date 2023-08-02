@@ -19,6 +19,9 @@ const Home: React.FC = () => {
    const handleAddVaccine = ()=> {
       navigate('addVaccine') 
    } 
+   const handleonMaps = () => {
+    navigate('vaccineOnMaps')
+   }
   return ( 
         <Container>
           <Header />
@@ -27,7 +30,7 @@ const Home: React.FC = () => {
             <Separator width={15} />
             <SmallCard icon='plus' title={'Adicionar\nVacinas'}  onPress={handleAddVaccine} />
             <Separator width={15} />
-            <SmallCard icon='localiza' title={'Procurar local\n de Vacinas'} />
+            <SmallCard icon='localiza' title={'Procurar local\n de Vacinas'} onPress={handleonMaps} />
           </ScrollViewItems>
           <Content>
             <TextMain typography="h6">Próxima Vacinas</TextMain>
