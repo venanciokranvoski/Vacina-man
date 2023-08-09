@@ -8,7 +8,7 @@ import Separator from '~/components/Separator';
 import {useTheme} from 'styled-components';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
-import {Platform, StatusBar} from 'react-native';
+import {Alert, Platform, StatusBar} from 'react-native';
 import useSignInNavigation from '~/hooks/useSignInNavigation';
 import { Controller, useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   /**
    * useHooks
    */
-  const {loading, signIn } = useAuth()
+  const {loading, signIn, checkIfExistsUser, signUp} = useAuth()
 
   /**
   * Forms
@@ -57,10 +57,27 @@ const Login: React.FC = () => {
   const handleGoogleSignIn = async ()=> {
    try {
      const {user} = await GoogleSignin.signIn();
-     console.log(user);
+   
+     const hasUser = await checkIfExistsUser({
+      email: user.email,
+     })
+
+     if(hasUser){
+      await signIn({
+        email: user.email,
+      });
+     }else {
+      await signUp({
+        ...(user.photo?{avatar: user.photo}: {}),
+        ...(user.givenName?{firstName: user.givenName}: {}),
+        ...(user.familyName?{lastName: user.familyName}: {}),
+        email: user.email,
+      })
+     }
+
     } catch (error) {
      console.log(error);
-     
+     Alert.alert("Ops!", "Ocorreu um erro ao realizar login");     
    } 
   }
 

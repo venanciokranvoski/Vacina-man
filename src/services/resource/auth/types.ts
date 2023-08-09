@@ -2,9 +2,8 @@ import {UserDTO} from '~/@types/dtos/user';
 
 export interface RequestSignInData {
   email: string;
-  password: string;
+  //Caso o Acesso seja por login social
+  password?: string;
 }
 
-export interface ResponseSignInData {
-  user: UserDTO;
-}
+export type ResponseSignInData = Array<UserDTO>

@@ -1,10 +1,10 @@
 /**
  * @format
  */
-// se estou em anbiente de desenvolvimento! 
-if (__DEV__) {
-  require('./server.js');
-}
+// // se estou em anbiente de desenvolvimento! 
+// if (__DEV__) {
+//   require('./server.js');
+// }
 
 import {AppRegistry} from 'react-native';
 import App from './App.tsx';
